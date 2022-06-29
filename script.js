@@ -5,7 +5,7 @@ const btnPrev = document.getElementById('btnPrev');
 const sliderWrapper = document.getElementById('sliderWrapper')
 
 btnNext.addEventListener('click', (e) => {
-  if (activeItem == slideItems.length - 1){
+  if (activeItem == slideItems.length - 1) {
     activeItem = 0;
   }
   else {
@@ -16,7 +16,7 @@ btnNext.addEventListener('click', (e) => {
 })
 
 btnPrev.addEventListener('click', (e) => {
-  if (activeItem == 0){
+  if (activeItem == 0) {
     activeItem = slideItems.length - 1;
   }
 

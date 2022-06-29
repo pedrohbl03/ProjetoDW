@@ -103,6 +103,10 @@ video {
     gap: 20px;
 }
 
+.about-game h2 {
+    color: black;
+}
+
 h1 {
     text-align: center;
 }
@@ -113,7 +117,7 @@ main {
 
 .social-media {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgb(47, 27, 104);
 
     display: flex;
@@ -121,10 +125,13 @@ main {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    padding: 20px;
 }
 
 .social-media img {
-    height: 130px;
+    min-height: 130px;
+    width: 100%;
+    padding: 20px;
 }
 
 .presentation img {
@@ -170,8 +177,8 @@ main {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    margin: auto;
-    padding-inline: 50px;
+    margin: 10px auto;
+    padding: 10px 100px;
 }
 
 .social-media button:hover,
@@ -184,7 +191,7 @@ main {
     justify-content: space-between;
     align-items: center;
     max-width: 1440px;
-
+    padding: 20px; 
     margin-inline: auto;
     padding-block: 50px;
     font-size: 28px;
@@ -231,24 +238,30 @@ a {
 
 .img-content {
     max-width: 1440px;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
     justify-content: center;
+    align-items: center;
+    margin: auto;
     margin-inline: auto;
-}
-
-.img-content div {
+  }
+  
+  .img-content div {
     padding-inline: 40px;
     text-align: center;
-    
-    display: flex;
-    flex-direction: column;
+    grid-column: span 6;
+    padding: 20px;
     gap: 20px;
-}
-
-.img-content img{
-    width: 50%;
-}
+  }
+  
+  .img-content img {
+    padding-inline: 40px;
+    width: 100%;
+    max-width: 1024px;
+    text-align: center;
+    grid-column: span 6;
+    gap: 20px;
+  }
 
 .imagens-game {
     background-color: rgb(47, 27, 104);
@@ -258,3 +271,33 @@ a {
     flex-direction: column;
     gap: 50px;
 }
+
+
+@media screen and (max-width: 1024px) {
+    .img-content img, .img-content div {
+      grid-column: span 12;
+    }
+  
+    .img-content div:nth-child(odd) {
+      order: 1;
+    }
+  
+    .download {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+  
+  @media  screen and (max-width: 500px) {
+    .presentation  {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .social-media h2 {
+      font-size: 2em;
+    }
+  }
