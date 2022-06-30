@@ -57,6 +57,15 @@ header a {
   text-decoration: none;
 }
 
+.nav-wrapper {
+  position: relative;
+}
+
+.mobile-nav {
+  display: none;
+  visibility: hidden;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -69,16 +78,13 @@ header a {
 
 .navbar {
   display: flex;
-  gap: 20px;
+  gap: 50px;
 }
 
 .brand-logo {
   display: block;
 }
 
-.navbar .nav-item:nth-child(odd) {
-  padding: 0 20px;
-}
 
 .dropdown-list{
   position: relative;
@@ -117,12 +123,12 @@ header a {
 /* SLIDER */
 
 .slider {
+  position: relative;
   overflow: hidden;
   height: 100%;
 }
 
 .slider-wrapper {
-  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -176,14 +182,16 @@ header a {
 /* NEXT GAMES ~~ CARDS */
 
 .next-games {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   gap: 20px;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
 .card-wrapper {
-  max-width: 320px;
+  grid-column: span 3;
+  width: 100%;
   background-color: #fff;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
@@ -207,12 +215,21 @@ header a {
 /* OUR PARTNERS */
 
 .our-partners ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   gap: 10px;
   list-style-type: none;
+}
+
+.our-partners li {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .our-partners ul li img {
@@ -229,12 +246,19 @@ header a {
 
 .cta-wrapper {
   padding: 80px 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-content: space-between;
+  align-items: center;
+}
+
+.cta-wrapper h3 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 15px 0;
 }
 
 .cta-wrapper form {
-  max-width: 400px;
   width: 100%;
   display: flex;
 }
@@ -285,3 +309,91 @@ footer {
   gap: 20px;
   margin-bottom: 20px;
 }
+
+@media screen and (max-width: 992px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .our-partners li {
+    grid-column: span 4;
+  }
+
+  .card-wrapper {
+    grid-column: span 4;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .mobile-nav {
+    visibility: visible;
+    display: block;
+  }
+
+  .nav-item a {
+    padding: 20px;
+    display: block;
+  }
+
+  .nav-item:not(:last-child) {
+    border-bottom: 1px solid #b4b4b4;
+  }
+
+  .navbar {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    top: -200%;
+    left: 0;
+    width: 100%;
+    padding-top: 20px;
+    background:rgb(40, 40, 40);
+    padding: 0 20px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: all .3s;
+  }
+
+  .dropdown-list ul {
+    position: inherit;
+    background: transparent;
+    box-shadow: none;
+    color: #fff;
+    padding-left: 50px;
+    display: block;
+  }
+
+  .dropdrown-item:hover {
+    background: transparent;
+  }
+
+  .dropdrown-item a{
+    padding: 0;
+    color: #fff;
+  }
+  
+
+  .navbar.active {
+    visibility: visible;
+    opacity: 1;
+    top: 100%;
+  }
+
+  .our-partners li {
+    grid-column: span 6;
+  }
+  .card-wrapper {
+    grid-column: span 6;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .our-partners li {
+    grid-column: span 12;
+  }
+  .card-wrapper {
+    grid-column: span 12;
+  }
+}
+

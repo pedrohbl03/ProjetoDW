@@ -12,18 +12,16 @@ const handleSubmit = async (e) => {
   const message = document.getElementById('message');
 
   if (name.value === '' || email.value === '' || message.value === '') {
-    validatorMessage.style.color = 'red';
-    validatorMessage.innerText = 'Please fill in all fields';
+    validatorMessage.innerText = 'Preencha todos os campos obrigatórios';
   }
 
   if (!regexValidator.test(prefer.value)) {
-    validatorMessage.style.color = 'red';
-    validatorMessage.innerText = 'Please enter a valid prefer email';
+    validatorMessage.innerText = 'Por favor, digite um email de colaborador do Limgraph';
   }
 
   else {
     validatorMessage.style.color = 'green';
-    validatorMessage.innerText = "Thank you for your message!";
+    validatorMessage.innerText = "Obrigado pela sua mensagem, em breve retornaremos o contato!";
 
     await fetch('/api/contact', {
       method: 'POST',

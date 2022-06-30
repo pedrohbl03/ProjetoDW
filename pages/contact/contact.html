@@ -8,6 +8,7 @@
   <title>LimGraph</title>
   <link rel="stylesheet" href="./contact.css" />
   <link rel="stylesheet" href="../../style.css" />
+  <script src="https://kit.fontawesome.com/653bc04403.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap" rel="stylesheet" />
@@ -16,35 +17,42 @@
 <body>
   <div class="wrapper">
     <header>
-      <nav class="nav">
-        <a href="../../index.html" class="brand-logo">
-          LimGraph
-        </a>
-        <ul class="navbar">
-          <li class="dropdown-list nav-item">
-            <a href="index.html">
-              Jogos
+      <div class="nav-wrapper">
+        <nav class="nav">
+          <a href="../../index.html" class="brand-logo">
+            LimGraph
+          </a>
+          <div class="mobile-nav">
+            <a class="btn mobile-btn" href="#">
+              <i class="fas fa-bars"></i>
             </a>
-            <ul>
-              <li class="dropdrown-item">
-                <a href="../game1/elden-ring.html">Elden Ring</a>
-              </li>
-              <li class="dropdrown-item">
-                <a href="../game2/ffxiv.html">Final Fantasy</a>
-              </li>
-              <li class="dropdrown-item">
-                <a href="../game3/gtav.html">Gta V</a>
-              </li>
-              <li class="dropdrown-item">
-                <a href="./game4/lol.html">LOL</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="./contact.html">Suporte</a>
-          </li>
-        </ul>
-      </nav>
+          </div>
+          <ul class="navbar">
+            <li class="dropdown-list nav-item">
+              <a href="#">
+                Jogos
+              </a>
+              <ul>
+                <li class="dropdrown-item">
+                  <a href="../game1/elden-ring.html">Elden Ring</a>
+                </li>
+                <li class="dropdrown-item">
+                  <a href="../game2/ffxiv.html">Final Fantasy</a>
+                </li>
+                <li class="dropdrown-item">
+                  <a href="../game3/gtav.html">Gta V</a>
+                </li>
+                <li class="dropdrown-item">
+                  <a href="../game4/lol.html">LOL</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="../contact/contact.html">Suporte</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
       <section class="map-section">
@@ -141,6 +149,7 @@
   </div>
 
     <script src="./script.js"></script>
+    <script src="../../navbar.js"></script>
 </body>
 
 </html>

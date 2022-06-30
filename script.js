@@ -27,7 +27,6 @@ btnPrev.addEventListener('click', (e) => {
   return slideControls(activeItem)
 })
 
-
 const slideControls = (item) => {
   sliderWrapper.style.transform = `translateX(${-item * 100}%)`
 }

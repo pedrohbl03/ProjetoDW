@@ -112,9 +112,8 @@ main {
 
 .social-media {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-image: linear-gradient(to right, #d896ff, #800080);
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -123,7 +122,8 @@ main {
 }
 
 .social-media img {
-    height: 130px;
+    max-height: 130px;
+    padding: 20px;
 }
 
 .presentation img {
@@ -268,6 +268,11 @@ a {
 
 
 @media screen and (max-width: 1024px) {
+
+    .social-media {
+        padding: 20px;
+    }
+
     .img-content img, .img-content div {
       grid-column: span 12;
     }
@@ -290,8 +295,8 @@ a {
       justify-content: center;
       align-items: center;
     }
-  
+    
     .social-media h2 {
-      font-size: 2em;
+      font-size: 1.5em;
     }
   }
